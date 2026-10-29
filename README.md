@@ -23,7 +23,7 @@ It is an official, experimental **GUI plugin**: it injects a few hundred lines o
 
 The palette is the OpenCode CLI's own version 2 dark theme (from the [`anomalyco/opencode`](https://github.com/anomalyco/opencode) repository, `packages/tui/src/theme/assets/v2/opencode.json`).
 
-Light mode is untouched — every rule is scoped to `:root[data-color-scheme="dark"]`.
+Light mode keeps the app's defaults with one exception: code text uses a calmer green, `#165e2e`, because the default light green is hard to read.
 
 ## Requirements
 
