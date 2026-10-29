@@ -74,6 +74,7 @@ No entry in `opencode.json` or `cli.json` is required, because the Desktop disco
 
 ## Troubleshooting
 
+- **Colors gone flat after an OpenCode Desktop update.** Fully quit the app (`Cmd + Q`) and reopen it once. The background server builds its plugin list at startup, so discovered plugin state does not refresh across a self-update — this happened between versions 2.2.0 and 2.2.1, when the plugin resolver changed shape. The current package works on both; the restart is still required after every app update.
 - **No changes after install.** Check three places: the `opencode-cli-theme` row exists and is on in Settings → Extensions → Plugins; Color scheme is **Dark**; the theme is **OpenCode**.
 - **Is it really running?** Open the command palette and run **"Diagnose theme plugin (opencode-cli-theme)"**. It reports from inside the window: whether the setup ran, whether the style block exists, and the two most important computed colors.
 - **Code colors partially off.** Syntax tokens are painted with internal `--hls-*` variables named by the highlighter. If a token type stays unchanged (comments, operators, and similar), open an issue naming the token; one override line fixes each.
