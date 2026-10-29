@@ -1,8 +1,4 @@
 {
   "name": "opencode-cli-theme",
-  "version": "0.1.0",
-  "exports": {
-    ".": "./index.ts",
-    "./gui-experimental": "./gui-experimental.cjs"
-  }
+  "version": "0.1.0"
 }
