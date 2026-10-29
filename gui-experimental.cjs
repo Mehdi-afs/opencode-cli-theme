@@ -151,18 +151,24 @@
     // Shiki paints token spans with var(--hls-<token>) and sets the literal
     // oc-2 colors inline on the code element. Author stylesheets carrying
     // !important win over inline declarations, so naming the same variables
-    // here retints every token to the CLI's syntax colors.
-    '[data-component="markdown"] [data-component="markdown-code"] { --hls-keyword: #9d7cd8 !important; --hls-function: #5c9cf5 !important; --hls-variable: #e06c75 !important; --hls-string: #7fd88f !important; --hls-number: #f5a742 !important; --hls-type: #e5c07b !important; --hls-operator: #56b6c2 !important; --hls-comment: #808080 !important; --hls-property: #fab283 !important; --hls-constant: #93e9f6 !important; --hls-punctuation: #eeeeee !important; --hls-tag: #e06c75 !important; --hls-attr: #fab283 !important; --hls-selector-tag: #e06c75 !important; --hls-meta: #808080 !important; --hls-link: #fab283 !important; --hls-builtin: #56b6c2 !important; --hls-title: #5c9cf5 !important; --hls-literal-constant: #93e9f6 !important; --hls-boolean: #93e9f6 !important; --hls-regex: #93e9f6 !important; }',
-
-    // ── Timeline markdown: the CLI's message styling ──
+    // here retints every token to the CLI's syntax colors. Scoped to dark;
+    // light keeps the app's own colors except the green set below.
+    ':root[data-color-scheme="dark"] [data-component="markdown"] [data-component="markdown-code"] { --hls-keyword: #9d7cd8 !important; --hls-function: #5c9cf5 !important; --hls-variable: #e06c75 !important; --hls-string: #7fd88f !important; --hls-number: #f5a742 !important; --hls-type: #e5c07b !important; --hls-operator: #56b6c2 !important; --hls-comment: #808080 !important; --hls-property: #fab283 !important; --hls-constant: #93e9f6 !important; --hls-punctuation: #eeeeee !important; --hls-tag: #e06c75 !important; --hls-attr: #fab283 !important; --hls-selector-tag: #e06c75 !important; --hls-meta: #808080 !important; --hls-link: #fab283 !important; --hls-builtin: #56b6c2 !important; --hls-title: #5c9cf5 !important; --hls-literal-constant: #93e9f6 !important; --hls-boolean: #93e9f6 !important; --hls-regex: #93e9f6 !important; }',
+    // ── Timeline markdown (dark): the CLI's message styling ──
     // The app stylesheet pins headings, bold, and inline code to white
     // (--v2-text-text-base). These rules override them with the CLI's own
     // markdown palette: purple headings, orange bold, yellow emphasis,
-    // green inline code, orange links.
-    '[data-component="markdown"] h1, [data-component="markdown"] h2, [data-component="markdown"] h3, [data-component="markdown"] h4, [data-component="markdown"] h5, [data-component="markdown"] h6 { color: #9d7cd8 !important; }',
-    '[data-component="markdown"] strong, [data-component="markdown"] b { color: #f5a742 !important; }',
-    '[data-component="markdown"] em, [data-component="markdown"] i { color: #e5c07b !important; }',
-    '[data-component="markdown"] :not(pre) > code { color: #7fd88f !important; }',
+    // green inline code, orange links. Scoped to dark; light keeps its own set.
+    ':root[data-color-scheme="dark"] [data-component="markdown"] h1, :root[data-color-scheme="dark"] [data-component="markdown"] h2, :root[data-color-scheme="dark"] [data-component="markdown"] h3, :root[data-color-scheme="dark"] [data-component="markdown"] h4, :root[data-color-scheme="dark"] [data-component="markdown"] h5, :root[data-color-scheme="dark"] [data-component="markdown"] h6 { color: #9d7cd8 !important; }',
+    ':root[data-color-scheme="dark"] [data-component="markdown"] strong, :root[data-color-scheme="dark"] [data-component="markdown"] b { color: #f5a742 !important; }',
+    ':root[data-color-scheme="dark"] [data-component="markdown"] em, :root[data-color-scheme="dark"] [data-component="markdown"] i { color: #e5c07b !important; }',
+    ':root[data-color-scheme="dark"] [data-component="markdown"] :not(pre) > code { color: #7fd88f !important; }',
+
+    // ── Timeline markdown (light) ──
+    // The app's default light green for code text (#1f8c44) is too bright.
+    // Only the green changes; everything else in light mode stays default.
+    ':root[data-color-scheme="light"] [data-component="markdown"] :not(pre) > code { color: #165e2e !important; }',
+    ':root[data-color-scheme="light"] [data-component="markdown"] [data-component="markdown-code"] { --hls-string: #165e2e !important; }',
   ].join('\n')
 
   var sdk = require('@opencode/plugin/gui')
