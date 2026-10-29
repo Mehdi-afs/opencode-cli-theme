@@ -35,7 +35,7 @@ Light mode keeps the app's defaults with one exception: code text uses a calmer 
 
 ## Requirements
 
-- **OpenCode Desktop** version 2.2.0 or newer, on macOS (tested), Windows and Linux untested but expected to work — the plugin only ships CSS.
+- **OpenCode Desktop** version 2.2.0 or newer (tested through 2.2.1), on macOS (tested), Windows and Linux untested but expected to work — the plugin only ships CSS.
 - **Color scheme: Dark** and **Theme: OpenCode** in **Settings → Appearance**.
 
 The plugin uses the Desktop's GUI plugin API, which is labeled experimental by the OpenCode project. The `Style` contribution used here is one stable surface of that API; if a future Desktop release changes it, the plugin either keeps working unchanged or simply stops applying until updated.
