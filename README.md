@@ -4,6 +4,14 @@
 
 It is an official, experimental **GUI plugin**: it injects a few hundred lines of CSS into the app window while the plugin is active. Nothing in the app installation is touched, app updates are unaffected, and disabling it is one switch in Settings.
 
+## Preview
+
+### Dark mode (default)
+
+![OpenCode CLI theme — dark mode](assets/preview-dark.png)
+
+*A real session rendered with the theme: orange bold, purple headings, green inline code, near-black surfaces.*
+
 ## What it changes (dark color scheme only)
 
 | What you see | Color | Hex |
